@@ -41,19 +41,25 @@ function Login() {
   return (
     <div>
       <form onSubmit={ handleSubmit }>
-        <input
-          type="email"
-          value={ email }
-          data-testid="email-input"
-          onChange={ handleChangeEmail }
-        />
-        <input
-          id="password"
-          type="password"
-          data-testid="password-input"
-          value={ password }
-          onChange={ handleChangePassword }
-        />
+        <label>
+          Email
+          <input
+            type="email"
+            value={ email }
+            data-testid="email-input"
+            onChange={ handleChangeEmail }
+          />
+        </label>
+        <label>
+          Password
+          <input
+            id="password"
+            type="password"
+            data-testid="password-input"
+            value={ password }
+            onChange={ handleChangePassword }
+          />
+        </label>
         <button type="submit" disabled={ isDisabled }>
           Entrar
         </button>
