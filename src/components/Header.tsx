@@ -12,9 +12,6 @@ function Header() {
     .wallet.expenses || []);
   const email = useSelector((state: UserType) => state.user.email);
 
-  const expensesValid = expenses.filter((expense) => typeof expense.value === 'number'
-  && !Number.isNaN(expense.value));
-
   const sum = expenses.reduce((total: any, expense: any) => {
     return total
     + (parseFloat(expense.value)

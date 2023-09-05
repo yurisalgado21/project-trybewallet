@@ -13,6 +13,7 @@ function WalletForm() {
   const [category, setCategory] = useState('Alimentação');
   const [description, setDescription] = useState('');
   const [exchangeRates, setExchangeRates] = useState();
+  console.log(exchangeRates);
   useEffect(() => {
     async function fetchCurrency() {
       try {
