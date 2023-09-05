@@ -9,7 +9,7 @@ export type TypeExpense = {
   currency: string,
   method: string,
   tag: string,
-  exchangeRates: object,
+  exchangeRates: Record<string, ExchangeRateData>,
 };
 
 export type ReduxState = {
@@ -45,6 +45,20 @@ export type Response = {
     timestamp:string;
     create_date:string;
   }
+};
+
+type ExchangeRateData = {
+  code: string;
+  codein: string;
+  name: string;
+  high: string;
+  low: string;
+  varBid: string;
+  pctChange: string;
+  bid: string;
+  ask: string;
+  timestamp: string;
+  create_date: string;
 };
 
 export type RootState = {
