@@ -5,6 +5,7 @@ import App from '../App';
 import { renderWithRouterAndRedux } from './helpers/renderWith';
 import * as APIModule from '../services/fetchApiData';
 import mockData from './helpers/mockData';
+import Wallet from '../pages/Wallet';
 
 beforeEach(() => {
   vi.spyOn(APIModule, 'fetchApiData').mockResolvedValue(mockData);
@@ -65,6 +66,33 @@ describe('Testes da aplicação', () => {
 
     await userEvent.type(valueInput, '100');
     await userEvent.type(descriptionInput, 'olá sou yuri');
+    await userEvent.click(buttonSubmit);
+  });
+  test('preenchendo os inputs e os selects, eles retornam o resultado esperado', async () => {
+    renderWithRouterAndRedux(<Wallet />);
+
+    expect(screen.getByRole('heading', {
+      name: /0\.00/i,
+    })).toBeInTheDocument();
+    const buttonSubmit = screen.getByRole('button', {
+      name: /adicionar despesa/i,
+    });
+    const valueInput = screen.getByText(/valor da despesa:/i);
+    const descriptionInput = screen.getByText(/descrição da despesa:/i);
+    expect(screen.getByText(/moeda:/i)).toBeInTheDocument();
+    expect(screen.getByText(/formas de pagamento:/i)).toBeInTheDocument();
+    expect(screen.getByText(/categoria da despesa:/i)).toBeInTheDocument();
+    const currencySelect = screen.getByTestId('currency-input');
+    expect(currencySelect).toBeInTheDocument();
+    const methodSelect = screen.getByTestId('method-input');
+    expect(methodSelect).toBeInTheDocument();
+    const categorySelect = screen.getByTestId('tag-input');
+    expect(categorySelect).toBeInTheDocument();
+    await userEvent.type(valueInput, '1000');
+    await userEvent.type(descriptionInput, 'olá sou yuri');
+    await userEvent.selectOptions(currencySelect, 'EUR');
+    await userEvent.selectOptions(methodSelect, 'Cartão de crédito');
+    await userEvent.selectOptions(categorySelect, 'Lazer');
     await userEvent.click(buttonSubmit);
   });
 });

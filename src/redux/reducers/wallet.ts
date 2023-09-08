@@ -1,6 +1,7 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 import { AnyAction } from 'redux';
-import { EXPENSE_ADD, SUCCESS_WALLET, START_REQUEST } from '../actions';
+import { EXPENSE_ADD, SUCCESS_WALLET, START_REQUEST, DELETE_EXPENSE } from '../actions';
+import { TypeExpense } from '../../types';
 
 // console.log()
 
@@ -33,6 +34,12 @@ const wallet = (state = INITIAL_STATE, action: AnyAction) => {
             ...action.payload,
           },
         ],
+      };
+    case DELETE_EXPENSE:
+      return {
+        ...state,
+        expenses: state.expenses
+          .filter((expense: TypeExpense) => expense.id !== action.payload),
       };
     default:
       return state;

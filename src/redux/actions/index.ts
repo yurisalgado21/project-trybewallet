@@ -11,6 +11,7 @@ export const actionEmailUser = (email: string) => {
 export const START_REQUEST = 'START_REQUEST';
 export const SUCCESS_WALLET = 'SUCCESS_WALLET';
 export const EXPENSE_ADD = 'EXPENSE_ADD';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
 export const startRequest = () => ({
   type: START_REQUEST,
@@ -24,6 +25,11 @@ export const actionWallet = (wallet: Array<any>) => ({
 export const expenseAdd = (expense: TypeExpense) => ({
   type: EXPENSE_ADD,
   payload: expense,
+});
+
+export const deleteExpense = (id: number) => ({
+  type: DELETE_EXPENSE,
+  payload: id,
 });
 
 export function fetchCurrenciesAction() {
