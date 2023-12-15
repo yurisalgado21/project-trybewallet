@@ -1,0 +1,59 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-image: url('https://s3-alpha-sig.figma.com/img/a988/661c/2a997b4837d5d433e009660ffbb08433?Expires=1694995200&Signature=iqjFwYf8dN8w~fFZbojsG8ymRxdIAqHULjqjJYc9e8NLCQheHIJodwptgqDMMDX-l-UMju7ZJJ9ZdXpF-0jXKhj~3Bl7ayK~eq32i2nHE9EYOVyjN4u7Mn6kmYXXT54x8vKvHNBkTrrpswc33A-~Y8CkLNI2fSmRsoi8liCSBP0DWe2HTnZWs1RvqiDvkccmVVyfNygxUVmiYKZ4RJ7aJCpaOxdKeTxM78gO0~ozoZAP8SsB7yEfw7Y~yZUkzSDFNBC0vKRHq4kxpkxPkFKtufhcB8gG75bo40oC7nkGFsPwmsitI5b-lIVMciY3a7B7zKvEOBE-uwlzjiYYJk8xYg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.title-form {
+    display: flex;
+    text-align: center;
+}
+
+.formContainer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 525px;
+    height: 356px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: -4px 9px 13px 0px rgba(3, 107, 82, 0.30);
+}
+
+.trybewallet {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    width: 330px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #003BE5;
+    background: #FFF;
+    margin-bottom: 5px;
+}
+
+.button {
+    width: 330px;
+    height: 40px;
+    color: #fefefe;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #003BE5;
+    background: #003BE5;
+    cursor: pointer;
+}

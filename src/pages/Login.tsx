@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import styles from '../Login.module.css';
 import { EmailType, actionEmailUser } from '../redux/actions';
+import emojiLogo from '../assets/🦆 emoji _money with wings_.jpg';
+import trybeLogo from '../assets/Trybe.jpg';
+import walletLogo from '../assets/Wallet.jpg';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -39,11 +43,18 @@ function Login() {
   };
 
   return (
-    <div>
-      <form onSubmit={ handleSubmit }>
+    <div className={ styles.container }>
+      <form className={ styles.formContainer } onSubmit={ handleSubmit }>
+        <div className={ styles.trybewallet }>
+          <img src={ emojiLogo } alt="emoji" />
+          <img src={ trybeLogo } alt="trybeLogo" />
+          <img src={ walletLogo } alt="walletLogo" />
+        </div>
         <label>
-          Email
+
           <input
+            className={ styles.input }
+            placeholder="Email"
             type="email"
             value={ email }
             data-testid="email-input"
@@ -51,8 +62,9 @@ function Login() {
           />
         </label>
         <label>
-          Password
           <input
+            className={ styles.input }
+            placeholder="Senha"
             id="password"
             type="password"
             data-testid="password-input"
@@ -60,7 +72,7 @@ function Login() {
             onChange={ handleChangePassword }
           />
         </label>
-        <button type="submit" disabled={ isDisabled }>
+        <button className={ styles.button } type="submit" disabled={ isDisabled }>
           Entrar
         </button>
       </form>

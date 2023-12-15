@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.trybewallet {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.email {
+    color: #2FC18C;
+}
+
+.labelMoedas {
+    color: #003BE5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

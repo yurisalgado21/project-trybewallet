@@ -1,0 +1,66 @@
+.containerForm {
+    color: #003BE5;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    width: 1037px;
+    height: 200px;
+    flex-shrink: 0;
+    background: rgba(225, 229, 235, 0.49);
+}
+
+label, .containerForm {
+    flex-direction: column;
+}
+
+.inputs {
+    margin-bottom: 5px;
+    width: 200px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #003BE5;
+}
+
+.inputSelect {
+    margin-bottom: 5px;
+    color: #003BE5;
+    width: 100px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #003BE5;
+}
+
+.button {
+    color: #fefefe;
+    width: 300px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #2FC18C;
+    background: #2FC18C;
+    cursor: pointer;
+}
+
+.labelEInputs {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:center;
+    width: 250px;
+    height: 250px;
+}
+
+.labelEInputs label {
+    margin-right: 6px;
+}
+
+.labelEInputs label:nth-child(4) {
+    margin-top: -25px;
+}
+
+.labelEInputs label:nth-child(5) {
+    margin-top: -25px;
+}

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { TypeExpense } from '../types';
 import { expenseAdd, actionWallet } from '../redux/actions';
 import { fetchApiData } from '../services/fetchApiData';
+import styles from './Form.module.css';
 
 function WalletForm() {
   const dispatch = useDispatch();
@@ -57,13 +58,13 @@ function WalletForm() {
   };
 
   return (
-    <>
-      <div>WalletForm</div>
-      <form>
+    <form className={ styles.containerForm }>
+      <div className={ styles.labelEInputs }>
         <label htmlFor="value">
           Valor da despesa:
           {' '}
           <input
+            className={ styles.inputs }
             value={ value }
             onChange={ (e) => setValue(e.target.value) }
             type="number"
@@ -76,6 +77,7 @@ function WalletForm() {
           Descrição da despesa:
           {' '}
           <input
+            className={ styles.inputs }
             value={ description }
             onChange={ (e) => setDescription(e.target.value) }
             type="text"
@@ -88,6 +90,7 @@ function WalletForm() {
           Moeda:
           {' '}
           <select
+            className={ styles.inputSelect }
             value={ currencyValue }
             onChange={ (e) => setCurrencyValue(e.target.value) }
             data-testid="currency-input"
@@ -105,6 +108,7 @@ function WalletForm() {
           Formas de pagamento:
           {' '}
           <select
+            className={ styles.inputSelect }
             value={ method }
             onChange={ (e) => setMethod(e.target.value) }
             data-testid="method-input"
@@ -118,6 +122,7 @@ function WalletForm() {
         <label htmlFor="category">
           Categoria da despesa:
           <select
+            className={ styles.inputSelect }
             value={ category }
             onChange={ (e) => setCategory(e.target.value) }
             data-testid="tag-input"
@@ -130,11 +135,11 @@ function WalletForm() {
             <option value="Saúde">Saúde</option>
           </select>
         </label>
-        <button type="submit" onClick={ handleSubmit }>
-          Adicionar despesa
-        </button>
-      </form>
-    </>
+      </div>
+      <button type="submit" onClick={ handleSubmit } className={ styles.button }>
+        Adicionar despesa
+      </button>
+    </form>
 
   );
 }
